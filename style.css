@@ -9,6 +9,8 @@ html {
 	
 body {
 	background: #433f39;
+	width: 1920px;
+	height: 1080px;
 	
 }
 	
@@ -45,7 +47,7 @@ h2 {
 	"header"
     "content";
 	grid-template-columns: auto auto auto auto;
-	grid-template-rows: 120px 100px 775px; 
+	grid-template-rows: 120px 100px 900px; 
 	
 }
 
@@ -60,7 +62,7 @@ h2 {
 	border-bottom: 5px dodgerblue solid;
 	border-radius: 10px;
 	box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.25);
-	grid-column: 1/5;
+	grid-column: 1/5
 			
 }
 
@@ -112,14 +114,14 @@ h2 {
 
 .header {
 	grid-area: header;
-	background: #433f39;
+	background: rgba(255, 99, 71, 0);
 	grid-column: 2/4;
 	
 }
 
 .content {
 	grid-area: content;
-	background-color: #433f39;
+	background-color: rgba(255, 99, 71, 0);
 	margin: 0;
 	padding: 0;
 	grid-column: 2/4;
@@ -269,7 +271,8 @@ h2 {
 	padding: 20px;
 	border: 5px dodgerblue solid;
 	border-radius: 10px;
-	background: #ffcc33;
+	display: none;
+	background: linear-gradient(#ffcc33, #cc9900);
 	position: relative;
 	align-self: right;
 	justify-self: center;
@@ -280,12 +283,14 @@ h2 {
 }
 
 .adresformulier input {
+	font-family: 'Oswald', sans-serif;
 	width: 435px;
     padding: 10px 10px 30px 30px;
     margin: 20px 30px;
-    display: block;
+    font-size: 20px;
+	display: block;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 10px;
     box-sizing: border-box;
 	position: relative;
 	float: center;
@@ -301,17 +306,70 @@ h2 {
 .adresformulier button { 
 	font-family: 'Oswald', sans-serif;
 	font-size: 20px;
-	width: 450px;
+	width: 200px;
     background-color: dodgerblue;
     color: black;
     margin: 20px 20px;
 	padding: 10px 10px 20px 20px;
     border: none;
-    border-radius: 40px;
+    border-radius: 20px;
     cursor: pointer;
 }
 
 .adresformulier button:hover {
     background-color: black;
 	color: #ffcc33;
+}
+
+.adresformulier .fa {
+    color: black;
+	font-size: 30px;
+}
+.adresformulier .fa:hover {
+    color: #ffcc33;
+	
+}
+
+.Adreslijst button:hover {
+    background-color: black;
+	color: #ffcc33;
+}
+
+.Adreslijst button { 
+	font-family: 'Oswald', sans-serif;
+	font-size: 20px;
+	width: 200px;
+    background-color: dodgerblue;
+    color: black;
+    margin: 20px 20px;
+	padding: 10px 10px 20px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.Adreslijst ul li {
+	padding: 20px;
+	margin: 20px;
+	width: 340px;
+	font-family: 'Oswald', sans-serif;
+	font-size: 20px;
+	color: black;
+	list-style: none;
+	text-align: left;
+	background: white;
+	border-radius: 20px;
+
+}
+	
+.Adreslijst {
+	width: 500px;
+	padding: 20px;
+	border: 5px dodgerblue solid;
+	border-radius: 10px;
+	display: relative;
+	background: linear-gradient(#ffcc33, #cc9900);
+	position: relative;
+	align-self: right;
+	
+	
 }
