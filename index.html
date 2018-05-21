@@ -8,85 +8,108 @@
 <title>Adresboek</title>
 <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-<script href="https://github.com/JasGri/Adresboek-opdracht-week-3/blob/master/script.js"></script>
-<link rel="stylesheet" href="https://github.com/JasGri/Adresboek-opdracht-week-3/blob/master/style.css" style="text/css"/>
+<link rel="stylesheet" type="text/css" href="C:\Users\jasper\Documents\Opdrachten\Adresboek\CSS\style.css">
+<script src="C:\Users\jasper\Documents\Opdrachten\Adresboek\script.js"></script>
 
 </head>
 
-<body>
 
-<div class="container">
-	<div class="nav">
-		<div class="smallmenu">
-			<ul>
-				<li>
-					<div class="hmomlaagdown">
-						<button onclick="showMenu()" class="hmomlaagbtn"><i class="fa fa-bars" ></i></button>
-						<div id="hmDropdown" class="hmomlaag-content">
-							<p>Lettergrootte</p>
-							<a class="slider-wrapper"><input type="range" list="tickmarks">
-								<datalist id="tickmarks">
-									<option value="0">
-									<option value="10">
-									<option value="20">
-									<option value="30">
-									<option value="40">
-									<option value="50">
-									<option value="60">
-									<option value="70">
-									<option value="80">
-									<option value="90">
-									<option value="100">
-								</datalist>
-							</a>
-							<p>Contrast</p>
-							<a class="slider-wrapper2"><input type="range" list="tickmarks">
-								<datalist id="tickmarks">
-									<option value="0">
-									<option value="10">
-									<option value="20">
-									<option value="30">
-									<option value="40">
-									<option value="50">
-									<option value="60">
-									<option value="70">
-									<option value="80">
-									<option value="90">
-									<option value="100">
-								</datalist>
-							</a>
+<body onload="my_onload_function()">
+	<div class="container">
+		<div class="nav">
+			<div class="smallmenu">
+				<ul>
+					<li>
+						<div class="hmomlaagdown">
+							<button onclick="showMenu()" class="hmomlaagbtn"><i class="fa fa-bars" ></i></button>
+							<div id="hmDropdown" class="hmomlaag-content">
+								<p>Lettergrootte</p>
+								<a class="slider-wrapper"><input type="range" list="tickmarks">
+									<datalist id="tickmarks">
+										<option value="0">
+										<option value="10">
+										<option value="20">
+										<option value="30">
+										<option value="40">
+										<option value="50">
+										<option value="60">
+										<option value="70">
+										<option value="80">
+										<option value="90">
+										<option value="100">
+									</datalist>
+								</a>
+								<p>Contrast</p>
+								<a class="slider-wrapper2"><input type="range" list="tickmarks">
+									<datalist id="tickmarks">
+										<option value="0">
+										<option value="10">
+										<option value="20">
+										<option value="30">
+										<option value="40">
+										<option value="50">
+										<option value="60">
+										<option value="70">
+										<option value="80">
+										<option value="90">
+										<option value="100">
+									</datalist>
+								</a>
+							</div>
 						</div>
-					</div>
-				</li>
-				<li>
-					<div  >
-						<button onclick="addAddress()" class="add-button" ><i class="fa fa-plus-circle"></i></button>	
-						<div id="addForm"></div>
-					<div>
-				</li>
-				<li>
-					<div class="search-box">
-						<input class="search-txt" type="text"  name="" placeholder="Zoek adres">
-						<a id="search" class="search-btn" href="#"><i class="fa fa-search"></i></a>
-					</div>
-				</li>
-			</ul>			
+					</li>
+					<li>
+						<div  >
+							<button onclick="addAddress()" class="add-button" ><i class="fa fa-plus-circle"></i></button>	
+							<div id="addForm"></div>
+						</div>
+					</li>
+					<li>
+						<div class="search-box">
+							<input class="search-txt" type="text"  name="" placeholder="Zoek adres">
+							<a id="search" class="search-btn" href="#"><i class="fa fa-search"></i></a>
+						</div>
+					</li>
+				</ul>			
+			</div>
 		</div>
-	</div>
-	<div class="header"><h1>Adresboek</h1></div>
-	<div class="content">
-	<h2>Contacten</h2>
-		<div id="Contacts" class="adresformulier">
-			<label for="naam">Naam:</label><input type="text" id="Fullname" placeholder="Jasper Grit" class="invulvelden">
-			<label for="straatnaam">Straatnaam:</label><input type="text" id="Streetname" placeholder="Calkoenstraat 47" class="invulvelden">
-			<label for="Postcode">Postcode:</label><input type="text" id="Postcode" placeholder="7906 BL" class="invulvelden">
-			<label for="plaats">Plaatsnaam:</label><input type="text" placeholder="Hoogeveen" id="Plaatsnaam" class="invulvelden">
-			<label for="Email">E-mail:</label><input type="text" placeholder="jasper_grit@hotmail.com" id="Email" class="invulvelden">
-			<br/>
-			<button type="button" id="myButton2" onclick="showSave()" >bewerken</button>
-			<br/>
-			<button id="cancel">annuleren</button>
-		</div>		
+		<div class="header"><h1>Adresboek</h1></div>
+		<div class="content">
+		<h2>Contacten</h2>
+			<div id="Contacts" class="adresformulier">
+				<label for="naam">Naam:</label><input type="text" id="Fullname" placeholder="Jasper Grit" class="invulvelden">
+				<label for="straatnaam">Straatnaam:</label><input type="text" id="Streetname" placeholder="Calkoenstraat 47" class="invulvelden">
+				<label for="Postcode">Postcode:</label><input type="text" id="Postcode" placeholder="7906 BL" class="invulvelden">
+				<label for="plaats">Plaatsnaam:</label><input type="text" placeholder="Hoogeveen" id="Plaatsnaam" class="invulvelden">
+				<label for="Email">E-mail:</label><input type="text" placeholder="jasper_grit@hotmail.com" id="Email" class="invulvelden">
+				<br/>
+				<button type="button" id="myButton2" onclick="showSave()" >bewerken</button>
+				<button id="cancel">annuleren</button>
+				<button type="button" id="myButton3"><i class="fa fa-trash"></i></button>
+			</div>
+			<div id="adres_lijst" class="Adreslijst">
+				<ul> 
+					<li>Naam: Jasper Grit</li>
+					<li>Straatnaam: Stationsstraat 6</li>
+					<li>Postcode: 7872 RD</li>
+					<li>Plaatsnaam: Hoogeveen</li>
+					<li>E-mail: jasper_grit@hotmail.com"</li>
+					<button onclick="bewerk_adres(adres, i)" id="Change">bewerk adres</button>
+					<li>Naam: Martin Grit</li>
+					<li>Straatnaam: Julianaweg 13</li>
+					<li>Postcode: 7957 BK</li>
+					<li>Plaatsnaam: De Wijk</li>
+					<li>E-mail: Martin_grit@hotmail.com"</li>
+					<button onclick="bewerk_adres(adres, i)" id="Change">bewerk adres</button>
+					<li>Naam: Klasien Muller</li>
+					<li>Straatnaam: Stationsstraat 6</li>
+					<li>Postcode: 7872 RD</li>
+					<li>Plaatsnaam: Valthe</li>
+					<li>E-mail: klasien_muller@hotmail.com"</li>
+					<button onclick="bewerk_adres(adres, i)" id="Change">bewerk adres</button>
+				</ul>	
+			</div>
+		</div>
 	</div>
 </body>
 
