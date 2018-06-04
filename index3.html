@@ -48,9 +48,7 @@ h2 {
 .Tool-bar input {	
 	float: right;
 	clear: both; 
-
 }
-
 #search-bar {
 	background: white;
 	border-radius: 5px; 
@@ -96,7 +94,6 @@ table th{
 	text-align: center;
 	
 }
-
 table td{
 	color: #015968;
 	background: linear-gradient(white, #ffe8a5);
@@ -109,7 +106,6 @@ table td{
 	text-align: center;
 	
 }
-
 table td:hover{
 	color: white;
 	background: linear-gradient(#bdf5ff, #508c96);
@@ -168,7 +164,7 @@ select:hover {
 	<b>contrast:<b><input type="range" min="1" max="5" value="1" step="0.1" id="contrastfilter" 	oninput="filter_contrast()">
 	<br>
 	<br>	
-	<b>Lettergrootte:<input type="range" min="1" max="5" value="1" step="0.1" id="adjustFont" 	oninput="adjustFontSize()">
+	<b>Lettergrootte:<input type="range" min="16" max="40" value="1" step="0.1" id="adjustFont" 	oninput="adjustFontSize()">
 	<span>Font Size</span><span id="size"></span>
 	<br>	
 	<br>	
@@ -179,6 +175,7 @@ select:hover {
 		<b>Straatnaam:</b>	<input id="streetname"><br><br>
 		<b>Postcode:</b>	<input id="postcode"><br><br>
 		<b>Plaatsnaam:</b>	<input id="place"><br><br>
+		<button onclick= "resetInputfields();" value="Reset inputfields">reset</button>
 		<button onclick= "addHtmlTableRow();" >opslaan</button>
 		<button onclick= "editHtmlTbleSelectedRow();">bewerken</button>
 		<button onclick= "removeSelectedRow();">verwijderen</button>
@@ -222,25 +219,24 @@ select:hover {
 		container.style.filter = "contrast("+contrastlevel+")";
 	}
 	table = document.getElementById('table');
-	function adjustFontSize() {
-		var adjustFont = document.getElementById('adjustFont'),
-		fontsize = adjustFont.valueAsNumber;
-		table.style.webkitFontSize = "px("+fontsize+")";
-		table.style.fontSize = "px("+fontsize+")";
+
+    function adjustFontSize() {
+        var adjustFont = document.getElementById('adjustFont'),
+        fontsize = document.getElementById('adjustFont').value ;
+        table = document.getElementById('table');
+        table.style.fontSize = fontsize+"px";
+	}	
+		
+	function resetInputfields() 
+	{
+		document.getElementById('inputfields').reset();
+	
 	}
-//	var size;
-//	function adjustFontSize() {
-//		var t = document.getElementById('adjustFont').value;
-//		var x = document.getElementById('table');
-//		x.style.fontsize =t+"px";
-//		size =t;
-//		document.getElementById("size").innerHTML =size;
-//		
-//	}
-           var addresses = [["Jasper Grit","Calkoenstraat 47","7906 BL","Hoogeveen"],
-                        ["Martin Grit","Julianaweg 13","7957 BK", "De Wijk"],
-                        ["Klasien Muller","Stationsstraat 6","7872 RD", "Valthe"]],
-               table = document.getElementById("table");
+	
+	var addresses = [["Jasper Grit","Calkoenstraat 47","7906 BL","Hoogeveen"],
+	                ["Martin Grit","Julianaweg 13","7957 BK", "De Wijk"],
+	                ["Klasien Muller","Stationsstraat 6","7872 RD", "Valthe"]],
+       table = document.getElementById("table");
        
        for(var i = 1; i < table.rows.length; i++)
        {
@@ -250,7 +246,6 @@ select:hover {
              table.rows[i].cells[j].innerHTML = addresses[i - 1][j];
          }
        }
-	
 	   
 	var rIndex,
                table = document.getElementById("table");
